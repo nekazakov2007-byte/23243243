@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LUX SOCKS | Премиальные носки</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="header-inner">
+                <div class="logo">
+                    <i class="fas fa-crown"></i>
+                    <span>LUX</span> SOCKS
+                    <div class="logo-tag">EXCLUSIVE COLLECTION</div>
+                </div>
+                <div class="header-controls">
+                    <button class="icon-btn" id="themeToggle" aria-label="Тёмная тема"><i class="fas fa-moon"></i></button>
+                    <button class="icon-btn" id="accessibilityToggle" aria-label="Режим для слабовидящих"><i class="fas fa-eye"></i></button>
+                    <button class="icon-btn cart-btn" id="cartBtn" aria-label="Корзина"><i class="fas fa-shopping-bag"></i><span class="badge" id="cartCount">0</span></button>
+                    <button class="icon-btn" id="favoritesBtn" aria-label="Избранное"><i class="fas fa-heart"></i><span class="badge" id="favoritesCount">0</span></button>
+                    <button class="btn-luxury" id="authBtn"><i class="fas fa-user"></i> ВОЙТИ</button>
+                    <button class="btn-luxury-outline" id="logoutBtn" style="display:none"><i class="fas fa-sign-out-alt"></i> ВЫЙТИ</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-slider">
+            <div class="slider-container">
+                <div class="slider" id="slider">
+                    <div class="slide active" style="background-image: url('https://i.pinimg.com/736x/31/15/59/3115593c586ea24ecfae36ee6c67e358.jpg')">
+                        <div class="slide-overlay"></div>
+                        <div class="slide-content">
+                            <div class="slide-tag">LIMITED EDITION</div>
+                            <h1>Шёлк & Кашемир</h1>
+                            <p>Ручная работа. Итальянский шёлк. Нежность, достойная королей.</p>
+                            <button class="btn-gold">КУПИТЬ СЕЙЧАС</button>
+                        </div>
+                    </div>
+                    <div class="slide" style="background-image: url('https://i.pinimg.com/1200x/de/11/50/de1150c743af6ee0170ddf993d3d2b9c.jpg')">
+                        <div class="slide-overlay"></div>
+                        <div class="slide-content">
+                            <div class="slide-tag">NEW ARRIVAL</div>
+                            <h1>Золотая коллекция</h1>
+                            <p>24-каратная золотая нить. Для тех, кто привык к лучшему.</p>
+                            <button class="btn-gold">ПРЕДЗАКАЗ</button>
+                        </div>
+                    </div>
+                    <div class="slide" style="background-image: url('https://i.pinimg.com/736x/e4/41/cc/e441cce3368c73378914ddddbdf10dd1.jpg')">
+                        <div class="slide-overlay"></div>
+                        <div class="slide-content">
+                            <div class="slide-tag">VIP SERVICE</div>
+                            <h1>Бесплатная доставка</h1>
+                            <p>Персональный стилист. Доставка за 2 часа по Дубаю.</p>
+                            <button class="btn-gold">КОНСУЛЬТАЦИЯ</button>
+                        </div>
+                    </div>
+                </div>
+                <button class="slider-nav prev" id="prevSlide" aria-label="Предыдущий слайд"><i class="fas fa-chevron-left"></i></button>
+                <button class="slider-nav next" id="nextSlide" aria-label="Следующий слайд"><i class="fas fa-chevron-right"></i></button>
+                <div class="slider-dots" id="sliderDots"></div>
+            </div>
+        </div>
+    </section>
+
+    <div class="features">
+        <div class="container">
+            <div class="features-grid">
+                <div class="feature"><i class="fas fa-truck"></i><span>Бесплатная доставка от 10 000₽</span></div>
+                <div class="feature"><i class="fas fa-gem"></i><span>Оригинальный люкс</span></div>
+                <div class="feature"><i class="fas fa-headset"></i><span>24/7 Консьерж-сервис</span></div>
+                <div class="feature"><i class="fas fa-exchange-alt"></i><span>Примерка перед покупкой</span></div>
+            </div>
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+            <div class="filters">
+                <div class="filters-grid">
+                    <div class="filter-item"><label><i class="fas fa-tag"></i> ЦЕНА ДО</label><input type="number" id="priceFilter" value="50000" placeholder="50000"></div>
+                    <div class="filter-item"><label><i class="fas fa-palette"></i> ЦВЕТ</label><select id="colorFilter"><option value="">Все</option><option>Черный</option><option>Белый</option><option>Красный</option><option>Синий</option><option>Зеленый</option><option>Золотой</option></select></div>
+                    <div class="filter-item"><label><i class="fas fa-ruler"></i> РАЗМЕР</label><select id="sizeFilter"><option value="">Все</option><option>35-38</option><option>39-42</option><option>43-46</option></select></div>
+                    <div class="filter-item"><label><i class="fas fa-feather-alt"></i> МАТЕРИАЛ</label><select id="materialFilter"><option value="">Все</option><option>Шёлк</option><option>Кашемир</option><option>Хлопок</option><option>Шерсть</option></select></div>
+                    <div class="filter-item"><label><i class="fas fa-venus-mars"></i> ПОЛ</label><select id="genderFilter"><option value="">Все</option><option>Мужские</option><option>Женские</option><option>Унисекс</option></select></div>
+                    <div class="filter-item"><label><i class="fas fa-crown"></i> КОЛЛЕКЦИЯ</label><select id="brandFilter"><option value="">Все</option><option>Royal Silk</option><option>Golden Thread</option><option>Black Label</option></select></div>
+                </div>
+                <div class="filters-actions">
+                    <div class="search"><i class="fas fa-search"></i><input type="text" id="searchInput" placeholder="Поиск по каталогу..."></div>
+                    <div class="sort"><span>Сортировка:</span><select id="sortSelect"><option value="name">По названию</option><option value="price_asc">Цена ↑</option><option value="price_desc">Цена ↓</option><option value="rating">По рейтингу</option></select></div>
+                    <button class="btn-gold-small" id="applyFiltersBtn">ПРИМЕНИТЬ</button>
+                    <button class="btn-outline-small" id="resetFiltersBtn">СБРОСИТЬ</button>
+                </div>
+            </div>
+
+            <div class="catalog-header">
+                <h2><span class="gold">✦</span> ЭКСКЛЮЗИВНАЯ КОЛЛЕКЦИЯ <span class="gold">✦</span></h2>
+                <p id="resultsCount" class="count"></p>
+            </div>
+
+            <div id="catalog" class="catalog"></div>
+            <div id="pagination" class="pagination"></div>
+
+            <div class="games-section">
+                <div class="game-card old-game">
+                    <i class="fas fa-dice-d6 game-icon"></i>
+                    <h3>VIP БОНУСНАЯ ИГРА</h3>
+                    <p>Кликайте на носок и получайте статусные бонусы</p>
+                    <div class="bonus"><i class="fas fa-coins"></i> БОНУСЫ: <span id="bonusPoints">0</span> ₽</div>
+                    <div class="clicker" id="clickerArea"><i class="fas fa-socks"></i></div>
+                    <p class="hint">100 кликов = 50 бонусных рублей</p>
+                </div>
+
+                <div class="game-card catch-game">
+                    <i class="fas fa-gamepad game-icon"></i>
+                    <h3>ЛОВИ НОСКИ!</h3>
+                    <p>Ловите падающие носки. За каждый пойманный носок +0.5 ₽ бонусов</p>
+                    <div class="bonus"><i class="fas fa-coins"></i> ЗА ЭТУ ИГРУ: <span id="catchBonus">0</span> ₽</div>
+                    <div class="game-canvas-container">
+                        <canvas id="catchGameCanvas" width="500" height="400"></canvas>
+                        <button class="btn-gold" id="startCatchGame">НАЧАТЬ ИГРУ</button>
+                        <div id="catchScore" class="catch-score">Поймано: 0</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reviews">
+                <h3><i class="fas fa-star gold"></i> ОТЗЫВЫ КЛИЕНТОВ</h3>
+                <div id="reviewsList" class="reviews-list"></div>
+                <div class="add-review">
+                    <h4>Оставить отзыв</h4>
+                    <div class="stars" id="starRatingInput">
+                        <i class="far fa-star" data-rating="1"></i><i class="far fa-star" data-rating="2"></i><i class="far fa-star" data-rating="3"></i><i class="far fa-star" data-rating="4"></i><i class="far fa-star" data-rating="5"></i>
+                    </div>
+                    <textarea id="reviewText" rows="3" placeholder="Поделитесь впечатлениями..."></textarea>
+                    <button class="btn-gold" id="addReviewBtn">ОТПРАВИТЬ ОТЗЫВ</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo"><i class="fas fa-crown"></i> LUX SOCKS</div>
+                <div class="footer-links"><a href="#">О нас</a><a href="#">Доставка</a><a href="#">Контакты</a><a href="#">VIP клуб</a></div>
+                <div class="footer-social"><i class="fab fa-instagram"></i><i class="fab fa-telegram"></i><i class="fab fa-whatsapp"></i></div>
+            </div>
+            <div class="footer-bottom">© 2024 LUX SOCKS — Премиум-бутик носков</div>
+        </div>
+    </footer>
+
+    <div id="cartSidebar" class="sidebar"><div class="sidebar-header"><h3><i class="fas fa-shopping-bag"></i> КОРЗИНА</h3><button class="close-sidebar">&times;</button></div><div id="cartItems" class="cart-items"></div><div class="cart-footer"><div class="total">ИТОГО: <span id="cartTotal">0</span> ₽</div><button id="checkoutBtn" class="btn-gold btn-block">ОФОРМИТЬ ЗАКАЗ</button></div></div>
+    <div id="favoritesSidebar" class="sidebar"><div class="sidebar-header"><h3><i class="fas fa-heart"></i> ИЗБРАННОЕ</h3><button class="close-sidebar">&times;</button></div><div id="favoritesItems" class="fav-items"></div></div>
+    <div id="authModal" class="modal"><div class="modal-content"><div class="modal-header"><h3>ДОБРО ПОЖАЛОВАТЬ</h3><button class="close-modal">&times;</button></div><div class="tabs"><button class="tab active" data-tab="login">ВХОД</button><button class="tab" data-tab="register">РЕГИСТРАЦИЯ</button></div><div id="loginForm" class="form active"><input type="email" id="loginEmail" placeholder="Email"><input type="password" id="loginPassword" placeholder="Пароль"><button id="doLoginBtn" class="btn-gold btn-block">ВОЙТИ</button></div><div id="registerForm" class="form"><input type="text" id="regName" placeholder="Имя"><input type="email" id="regEmail" placeholder="Email"><input type="password" id="regPassword" placeholder="Пароль"><button id="doRegisterBtn" class="btn-gold btn-block">ЗАРЕГИСТРИРОВАТЬСЯ</button></div><div id="authMessage" class="message"></div></div></div>
+    <div id="toast" class="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
